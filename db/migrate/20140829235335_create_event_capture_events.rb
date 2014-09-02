@@ -1,6 +1,6 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateEventCaptureEvents < ActiveRecord::Migration
   def change
-    create_table :events do |t|
+    create_table :event_capture_events do |t|
       t.datetime :emitted_at
       t.datetime :recorded_at
       t.text :payload

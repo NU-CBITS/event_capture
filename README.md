@@ -34,6 +34,12 @@ Mount the engine in `config/routes.rb`
 
 ### JS client
 
+Load the JavaScript in your manifest
+
+    //= require event_capture
+
+Use the client to emit data and handle server responses
+
     var client = new EventCaptureClient('https://my.server.api');
     var response = client.log({ foo: 'bar' });
     response.done(function(event) {
