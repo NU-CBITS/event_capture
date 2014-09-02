@@ -2,6 +2,12 @@
 
 Server and client components for capturing events.
 
+## Dependencies/assumptions
+
+The JS client bundled with this engine assumes that jQuery is present.
+Due to the use of some methods, such as `Date.prototype.toISOString`, the JS
+client is not compatible with older browsers such as IE8.
+
 ## Installation
 
 Add to your `Gemfile`
@@ -25,6 +31,17 @@ And run them
 Mount the engine in `config/routes.rb`
 
     mount EventCapture::Engine, at: "event_capture"
+
+### JS client
+
+    var client = new EventCaptureClient('https://my.server.api');
+    var response = client.log({ foo: 'bar' });
+    response.done(function(event) {
+      ...
+    });
+    response.fail(function(xhr, status, error) {
+      ...
+    });
 
 ## Run Ruby specs
 
