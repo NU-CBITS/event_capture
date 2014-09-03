@@ -41,6 +41,21 @@ so in an initializer. E.g. in `config/initializers/event_capture.rb`
       before_action :authenticate_participant!
     end
 
+Additionally, you can add additional parameters to an event in the controller.
+
+    class EventCapture::EventsController
+
+      ...
+
+      def event_params
+        {
+          payload: params[:payload],
+          emitted_at: params[:emittedAt],
+          participant_id: current_participant.id
+        }
+      end
+    end
+
 ### JS client
 
 Load the JavaScript in your manifest
@@ -50,7 +65,7 @@ Load the JavaScript in your manifest
 Use the client to emit data and handle server responses
 
     var client = new EventCaptureClient('https://my.server.api');
-    var response = client.log({ foo: 'bar' });
+    var response = client.log({ kind: 'myEvent', payload: { foo: 'bar' } });
     response.done(function(event) {
       ...
     });

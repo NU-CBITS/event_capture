@@ -17,6 +17,7 @@ module EventCapture
 
     def event_params
       {
+        kind: params[:kind],
         payload: params[:payload],
         emitted_at: params[:emittedAt]
       }

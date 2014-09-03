@@ -5,9 +5,10 @@
     this.serverUrl = serverUrl;
   }
 
-  EventCaptureClient.prototype.log = function(payload) {
+  EventCaptureClient.prototype.log = function(options) {
     var data = {
-      payload: payload,
+      kind: options.kind,
+      payload: options.payload,
       emittedAt: (new Date()).toISOString()
     };
 
