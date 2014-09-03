@@ -3,6 +3,8 @@ module EventCapture
   class Event < ActiveRecord::Base
     before_create :set_timestamp
 
+    serialize :payload
+
     private
 
     def set_timestamp

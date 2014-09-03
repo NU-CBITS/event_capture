@@ -3,9 +3,9 @@
     this.serverUrl = serverUrl;
   }
 
-  EventCaptureClient.prototype.log = function(attributes) {
+  EventCaptureClient.prototype.log = function(payload) {
     var data = {
-      payload: attributes.payload,
+      payload: payload,
       emittedAt: (new Date()).toISOString()
     };
 

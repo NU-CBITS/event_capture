@@ -32,6 +32,15 @@ Mount the engine in `config/routes.rb`
 
     mount EventCapture::Engine, at: "event_capture"
 
+If you want to add controller filters, such as for authentication, you can do
+so in an initializer. E.g. in `config/initializers/event_capture.rb`
+
+    require "event_capture/events_controller"
+
+    class EventCapture::EventsController
+      before_action :authenticate_participant!
+    end
+
 ### JS client
 
 Load the JavaScript in your manifest
