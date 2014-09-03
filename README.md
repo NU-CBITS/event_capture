@@ -67,3 +67,11 @@ Create the database
 Run the specs
 
     rake spec
+
+## Run rubocop linter
+
+    rake rubocop
+
+## Run jsHint linter
+
+    rake jshint

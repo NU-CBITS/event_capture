@@ -1,4 +1,6 @@
 ;(function() {
+  'use strict';
+
   function EventCaptureClient(serverUrl) {
     this.serverUrl = serverUrl;
   }
