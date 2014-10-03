@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140829235335) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: true do |t|
+  create_table "event_capture_events", force: true do |t|
     t.datetime "emitted_at"
     t.datetime "recorded_at"
     t.text     "payload"
