@@ -1,5 +1,7 @@
 # Event Capture
 
+[![Build Status](https://travis-ci.org/cbitstech/event_capture.svg?branch=master)](https://travis-ci.org/cbitstech/event_capture) [![security](https://hakiri.io/github/cbitstech/event_capture/master.svg)](https://hakiri.io/github/cbitstech/event_capture/master)
+
 Server and client components for capturing events.
 
 ## Dependencies/assumptions
