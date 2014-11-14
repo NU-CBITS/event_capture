@@ -14,7 +14,9 @@ client is not compatible with older browsers such as IE8.
 
 Add to your `Gemfile`
 
-    gem 'event_capture', git: 'git@github.com:cbitstech/event_capture.git'
+```ruby
+gem 'event_capture', git: 'git@github.com:cbitstech/event_capture.git'
+```
 
 Then
 
@@ -32,31 +34,37 @@ And run them
 
 Mount the engine in `config/routes.rb`
 
-    mount EventCapture::Engine, at: "event_capture"
+```ruby
+mount EventCapture::Engine, at: "event_capture"
+```
 
 If you want to add controller filters, such as for authentication, you can do
 so in an initializer. E.g. in `config/initializers/event_capture.rb`
 
-    require "event_capture/events_controller"
+```ruby
+require "event_capture/events_controller"
 
-    class EventCapture::EventsController
-      before_action :authenticate_participant!
-    end
+class EventCapture::EventsController
+  before_action :authenticate_participant!
+end
+```
 
 Additionally, you can add additional parameters to an event in the controller.
 
-    class EventCapture::EventsController
+```ruby
+class EventCapture::EventsController
 
-      ...
+  # ...
 
-      def event_params
-        {
-          payload: params[:payload],
-          emitted_at: params[:emittedAt],
-          participant_id: current_participant.id
-        }
-      end
-    end
+  def event_params
+    {
+      payload: params[:payload],
+      emitted_at: params[:emittedAt],
+      participant_id: current_participant.id
+    }
+  end
+end
+```
 
 ### JS client
 
@@ -66,14 +74,16 @@ Load the JavaScript in your manifest
 
 Use the client to emit data and handle server responses
 
-    var client = new EventCaptureClient('https://my.server.api');
-    var response = client.log({ kind: 'myEvent', payload: { foo: 'bar' } });
-    response.done(function(event) {
-      ...
-    });
-    response.fail(function(xhr, status, error) {
-      ...
-    });
+```javascript
+var client = new EventCaptureClient('https://my.server.api');
+var response = client.log({ kind: 'myEvent', payload: { foo: 'bar' } });
+response.done(function(event) {
+  // ...
+});
+response.fail(function(xhr, status, error) {
+  // ...
+});
+```
 
 ## Run Ruby specs
 
