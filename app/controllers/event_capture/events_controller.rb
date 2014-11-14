@@ -1,12 +1,19 @@
-require "jbuilder"
-
 module EventCapture
-  # Manage events.
+  # Provide event creation.
   class EventsController < ApplicationController
     def create
       @event = Event.create!(event_params)
 
-      render "event_capture/events/create", status: :created
+      render json: {
+        id: @event.id,
+        emittedAt: @event.emitted_at,
+        recordedAt: @event.recorded_at,
+        payload: @event.payload,
+        userId: @event.user_id,
+        userAgent: @event.user_agent,
+        source: @event.source,
+        kind: @event.kind
+      }, status: :created
 
     rescue ActiveRecord::ActiveRecordError => invalid
       render json: { error: model_errors(invalid.record) },
