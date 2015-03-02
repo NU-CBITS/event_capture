@@ -22,13 +22,17 @@ module EventCapture
                kind: "barfoo")
       end
 
+      before(:each) do
+        @routes = Engine.routes
+      end
+
       context "when the event validates" do
         before do
           expect(Event).to receive(:create!) { event }
         end
 
         it "should return an error message" do
-          post :create, format: :json, use_route: :event_capture
+          post :create, format: :json
 
           assert_response 201
           expect(json["id"]).to eq(1234)
@@ -45,7 +49,7 @@ module EventCapture
         end
 
         it "should return an error message" do
-          post :create, format: :json, use_route: :event_capture
+          post :create, format: :json
 
           assert_response 400
           expect(json["error"]).to eq("baz")
