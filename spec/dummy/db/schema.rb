@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829235335) do
+ActiveRecord::Schema.define(version: 20150727145934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "event_capture_events", force: true do |t|
+  create_table "event_capture_events", force: :cascade do |t|
     t.datetime "emitted_at"
-    t.datetime "recorded_at"
+    t.datetime "recorded_at", null: false
     t.text     "payload"
     t.string   "user_id"
     t.string   "user_agent"
