@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["ericcf@northwestern.edu"]
   s.homepage    = "https://github.com/cbitstech/event_capture"
   s.summary     = "A Rails engine for capturing events."
-  s.description = "A Rails engine for capturing events."
+  s.description = "A Rails engine for capturing client side events."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*",
@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "activerecord", "~> 4.1"
 
-  s.add_development_dependency "pg"
+  s.add_development_dependency "pg", "~> 0.18"
   s.add_development_dependency "rspec-rails", "~> 3"
   s.add_development_dependency "jasmine-rails", "~> 0.10"
   s.add_development_dependency "jshintrb", "~> 0.2"
