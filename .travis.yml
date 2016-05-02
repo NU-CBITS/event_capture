@@ -2,10 +2,9 @@ language: ruby
 sudo: false
 cache: bundler
 rvm:
-- 2.2.2
-- 2.3.0
+  - 2.3.0
 before_script:
-- bundle exec rake app:db:create app:db:migrate
+  - bundle exec rake app:db:create app:db:migrate
 notifications:
   slack:
     secure: NlXC5TNPn9n87dq3OGGK881VysJ637TN+JOVZt+zFL+EfrRxEWV9nfMlkHUCG1I7I2h7p0yKh31l+v3lZKsAJ8LA2NppsMl4XB24/KRiga/N+XtFJ1dXIhOvl/ZWgBA3Cuv56c0EA09Qwlnh36bcHbTczKZTj6Se9GyoKSIbZvQ=
