@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = EventCapture::VERSION
   s.authors     = ["Eric Carty-Fickes"]
   s.email       = ["ericcf@northwestern.edu"]
-  s.homepage    = "https://github.com/cbitstech/event_capture"
+  s.homepage    = "https://github.com/NU-CBITS/event_capture"
   s.summary     = "A Rails engine for capturing events."
   s.description = "A Rails engine for capturing client side events."
   s.license     = "MIT"
