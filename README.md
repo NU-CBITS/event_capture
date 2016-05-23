@@ -1,6 +1,6 @@
 # Event Capture
 
-[![Build Status](https://travis-ci.org/cbitstech/event_capture.svg?branch=master)](https://travis-ci.org/cbitstech/event_capture) [![security](https://hakiri.io/github/cbitstech/event_capture/master.svg)](https://hakiri.io/github/cbitstech/event_capture/master)
+[![Build Status](https://travis-ci.org/NU-CBITS/event_capture.svg?branch=master)](https://travis-ci.org/NU-CBITS/event_capture) [![security](https://hakiri.io/github/NU-CBITS/event_capture/master.svg)](https://hakiri.io/github/NU-CBITS/event_capture/master)
 
 Server and client components for capturing events.
 
@@ -15,7 +15,7 @@ client is not compatible with older browsers such as IE8.
 Add to your `Gemfile`
 
 ```ruby
-gem 'event_capture', git: 'git@github.com:cbitstech/event_capture.git'
+gem 'event_capture', git: 'git@github.com:NU-CBITS/event_capture.git'
 ```
 
 Then
