@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "spec_helper"
 
 module EventCapture
@@ -13,8 +14,8 @@ module EventCapture
       let(:event) do
         double("event",
                id: 1234,
-               emitted_at: DateTime.new,
-               recorded_at: DateTime.new,
+               emitted_at: Time.zone.now,
+               recorded_at: Time.zone.now,
                payload: {}.to_json,
                user_id: "abcd",
                user_agent: "efgh",

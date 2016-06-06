@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module EventCapture
   # Provide event creation.
   class EventsController < ApplicationController
