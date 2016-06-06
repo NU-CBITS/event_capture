@@ -6,6 +6,10 @@ AllCops:
     - gemfiles/**/*
     - spec/dummy/**/*
     - vendor/**/*
+  TargetRubyVersion: 2.3
+
+Rails:
+  Enabled: true
 
 Documentation:
   Exclude:
