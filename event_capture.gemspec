@@ -26,5 +26,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-rails", "~> 3.5.0.beta3"
   s.add_development_dependency "jasmine-rails", "~> 0.10"
   s.add_development_dependency "jshintrb", "~> 0.2"
-  s.add_development_dependency "rubocop", "= 0.40"
+  s.add_development_dependency "rubocop"
 end
